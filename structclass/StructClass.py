@@ -29,12 +29,12 @@ def StructClass(name, format, fields, defaults={}):
 
         @classmethod
         def unpack(cls, input_bytes):
+            """Unpacks input bytes, returns the unpacked object and the remaining bytes from the input"""
             packsize = struct.calcsize(cls._FORMAT)
-            entries = {field: value for field, value in zip(cls._FIELDS, struct.unpack(cls._FORMAT, input_bytes)[:packsize])}
+            entries = {field: value for field, value in zip(cls._FIELDS, struct.unpack(cls._FORMAT, input_bytes[:packsize]))}
             return cls(**entries), input_bytes[packsize:]
 
         def __repr__(self):
             return self.__class__.__name__+'('+', '.join([field+'='+repr(self.__dict__[field]) for field in self._FIELDS])+')'
     StructClass.__name__ = name
     return StructClass
-            
