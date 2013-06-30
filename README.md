@@ -10,10 +10,13 @@ Usage example
 
     >>> from structclass import StructClass
     >>> SomePacket = StructClass('SomePacket', '<II', ['length', 'age'])
-    >>> my_packet = SomePacket.unpack(b'12345678')[0]
+    >>> my_packet, extra = SomePacket.unpack(b'123456789a')
     >>> my_packet
     SomePacket(length=875770417, age=943142453)
     >>> my_packet.age
     943142453
     >>> my_packet.pack()
     b'12345678'
+    >>> extra
+    b'9a'
+    >>> # Extra contains the bytes not used during unpacking
