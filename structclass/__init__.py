@@ -14,7 +14,7 @@ b'12345678'
 """
 
 __title__ = 'structclass'
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 __author__ = 'David Berthelot'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2013 ' + __author__
