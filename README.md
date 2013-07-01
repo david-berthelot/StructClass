@@ -5,6 +5,10 @@ This Python module allows to manipulate binary packed objects as classes.
 
 Similarly to the standard library struct module, objects can be packed or unpacked.
 
+Installation
+------------
+easy_install StructClass
+
 Usage example
 -------------
 
